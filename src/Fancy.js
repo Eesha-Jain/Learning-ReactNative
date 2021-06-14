@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 class Fancy extends React.Component {
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <Text>Fancy</Text>
       </View>
     );
@@ -12,7 +12,10 @@ class Fancy extends React.Component {
 }
 
 const styles = StyleSheet.create({
-
+  container: {
+    flex: 1, //Makes it fill the whole screen
+    backgroundColor: 'red'
+  }
 });
 
 export default Fancy;

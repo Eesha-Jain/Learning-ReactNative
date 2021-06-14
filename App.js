@@ -4,8 +4,8 @@ import Fancy from 'src/Fancy';
 
 const App: () => Node = () => {
   return (
-    //<Home />
-    <Fancy />
+    //<Home /> //This is the ToDo App
+    <Fancy /> //Learning styling
   );
 };
 
