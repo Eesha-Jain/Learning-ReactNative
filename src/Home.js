@@ -26,11 +26,16 @@ class Home extends React.Component {
     this.setState({newTodo: value})
   }
 
+  handlePress(e) {
+    //const { changedList } = [...this.state.newTodo, newTodo];
+    //this.setState({todos: changedList, newTodo: ""})
+  }
+
   render() {
     return (
       <View style={styles.sectionContainer}>
         <TextInput style={styles.input} value={this.state.newTodo} onChange={this.handleChange.bind(this)} />
-        <TouchableHighlight>
+        <TouchableHighlight style={styles.button} onPress={this.handlePress.bind(this)}>
           <Text>Add Task</Text>
         </TouchableHighlight>
         {this.state.todos.map((todo, i) => <Text key={i}>{todo}</Text>)}
@@ -51,6 +56,12 @@ const styles = StyleSheet.create({
     width: 100,
     padding: 5,
     marginBottom: 10
+  },
+  button: {
+    backgroundColor: '#da406f',
+    padding: 5,
+    borderRadius: 5,
+    marginBottom: 20,
   }
 });
 
