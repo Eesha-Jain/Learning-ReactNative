@@ -3,6 +3,10 @@
  * https://github.com/facebook/react-native
  */
 
+/*COMMENTS: This is almost EXACTLY like react. The main difference is the tags (View vs div) and also the function calls (onChange vs onChangeText)
+If you want to compare react-native to react, look in ReactToDoReference.txt for the react code for the same todo app
+*/
+
 //Import statements
 import React from 'react';
 import { View, TextInput, Text, StyleSheet, Dimensions, TouchableHighlight } from "react-native";
