@@ -16,29 +16,34 @@ class Home extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      todos: [1,2,3],
+      todos: [],
       newTodo: ""
     }
   }
 
-  handleChange(e) {
-    const { value } = e.target;
-    this.setState({newTodo: value})
+  handleChange(text) {
+    this.setState({newTodo: text})
   }
 
   handlePress(e) {
-    //const { changedList } = [...this.state.newTodo, newTodo];
-    //this.setState({todos: changedList, newTodo: ""})
+    const changedList = [...this.state.todos, this.state.newTodo];
+    this.setState({todos: changedList, newTodo: ""})
   }
 
   render() {
     return (
       <View style={styles.sectionContainer}>
-        <TextInput style={styles.input} value={this.state.newTodo} onChange={this.handleChange.bind(this)} />
+        <TextInput style={styles.input} value={this.state.newTodo} onChangeText={this.handleChange.bind(this)} />
+
         <TouchableHighlight style={styles.button} onPress={this.handlePress.bind(this)}>
           <Text>Add Task</Text>
         </TouchableHighlight>
-        {this.state.todos.map((todo, i) => <Text key={i}>{todo}</Text>)}
+
+        <View>
+          {this.state.todos.map((todo, i) => (
+            <Text style={styles.text} key={i}>{todo}</Text>
+          ))}
+        </View>
       </View>
     );
   }
@@ -53,15 +58,18 @@ const styles = StyleSheet.create({
   },
   input: {
     backgroundColor: '#dddddd',
-    width: 100,
-    padding: 5,
+    width: 200,
+    padding: 9,
     marginBottom: 10
   },
   button: {
     backgroundColor: '#da406f',
-    padding: 5,
+    padding: 8,
     borderRadius: 5,
     marginBottom: 20,
+  },
+  text: {
+    color: '#000000',
   }
 });
 
