@@ -10,3 +10,8 @@ Some alternates to React Native include...
 * IOS: Swift and SwiftUI in XCode
 
 React Native allows you to code for both Android and IOS together while still making modifications to either Android or IOS specifically!
+
+# BioMatrix
+If you want to view an example of IOS development, check out BioMatrix! BioMatrix is an app that allows users to quiz themselves on various biology questions!
+
+Link: https://github.com/Eesha-Jain/BioMatrix
