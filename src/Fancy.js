@@ -1,23 +1,21 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import {styles} from './styles';
 
+//You can use `` to incorporate variables into strings (like normal :))
+const opacity = 0.9;
+
+//You can pass in an array of styles where the later in the array override the earlier ones
 class Fancy extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Fancy</Text>
+      <View style={[styles.container, {backgroundColor: `rgba(130, 80, 231, ${opacity})`}]}>
+        <View style={styles.box}>
+        </View>
+        <Text style={styles.text}>Fancy</Text>
       </View>
     );
   }
 }
-
-const opacity = 0.9;
-const styles = StyleSheet.create({
-  container: {
-    flex: 1, //Makes it fill the whole screen instead of just the <Text> height
-    backgroundColor: `rgba(130, 80, 231, ${opacity})`, //Uses variable on line 14
-    padding: 60 //No units needed - automatically react-native points
-  }
-});
 
 export default Fancy;
