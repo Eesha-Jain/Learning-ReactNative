@@ -1,8 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
-
 /*COMMENTS: This is almost EXACTLY like react. The main difference is the tags (View vs div) and also the function calls (onChange vs onChangeText)
 If you want to compare react-native to react, look in ReactToDoReference.txt for the react code for the same todo app
 */
@@ -11,10 +6,6 @@ If you want to compare react-native to react, look in ReactToDoReference.txt for
 //Import statements
 import React from 'react';
 import { View, TextInput, Text, StyleSheet, Dimensions, TouchableHighlight } from "react-native";
-
-//Dimensions of the screen
-var width = Dimensions.get('window').width;
-var height = Dimensions.get('window').height;
 
 //Home class
 class Home extends React.Component {
@@ -37,16 +28,20 @@ class Home extends React.Component {
 
   render() {
     return (
-      <View style={styles.sectionContainer}>
-        <TextInput style={styles.input} value={this.state.newTodo} onChangeText={this.handleChange.bind(this)} />
+      <View style={styles.container}>
+        <View style={styles.form}>
+          <TextInput style={styles.input} value={this.state.newTodo} onChangeText={this.handleChange.bind(this)} />
 
-        <TouchableHighlight style={styles.button} onPress={this.handlePress.bind(this)}>
-          <Text>Add Task</Text>
-        </TouchableHighlight>
+          <TouchableHighlight
+            style={styles.button}
+            onPress={this.handlePress.bind(this)}>
+            <Text style={styles.buttonText}>Add</Text>
+          </TouchableHighlight>
+        </View>
 
-        <View>
+        <View style={styles.todos}>
           {this.state.todos.map((todo, i) => (
-            <Text style={styles.text} key={i}>{todo}</Text>
+            <View style={styles.todo}><Text style={styles.todoText} key={i}>{todo}</Text></View>
           ))}
         </View>
       </View>
@@ -54,27 +49,44 @@ class Home extends React.Component {
   }
 }
 
-//Styles
 const styles = StyleSheet.create({
-  sectionContainer: {
+  container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 70,
+    padding: 10,
+  },
+  form: {
+    flexDirection: 'row',
   },
   input: {
-    backgroundColor: '#dddddd',
-    width: 200,
-    padding: 9,
-    marginBottom: 10
+    flex: 0.7,
+    fontSize: 24,
+    borderBottomWidth: 1,
+    marginRight: 10,
   },
   button: {
-    backgroundColor: '#da406f',
-    padding: 8,
-    borderRadius: 5,
-    marginBottom: 20,
+    flex: 0.3,
+    borderWidth: 1,
+    borderColor: 'blue',
+    borderRadius: 3,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 50,
   },
-  text: {
-    color: '#000000',
+  buttonText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+  todos: {
+    marginTop: 40,
+  },
+  todo: {
+    marginBottom: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: 'lightgrey',
+  },
+  todoText: {
+    fontSize: 24,
   }
 });
 
