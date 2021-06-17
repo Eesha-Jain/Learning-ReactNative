@@ -5,7 +5,7 @@ If you want to compare react-native to react, look in ReactToDoReference.txt for
 
 //Import statements
 import React from 'react';
-import { View, TextInput, Text, StyleSheet, Dimensions, TouchableHighlight } from "react-native";
+import { View, TextInput, Text, StyleSheet, Dimensions, TouchableHighlight, Switch } from "react-native";
 
 //Home class
 class Home extends React.Component {
