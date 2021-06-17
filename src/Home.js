@@ -41,7 +41,7 @@ class Home extends React.Component {
 
         <View style={styles.todos}>
           {this.state.todos.map((todo, i) => (
-            <View style={styles.todo}><Text style={styles.todoText} key={i}>{todo}</Text></View>
+            <View key={i} style={styles.todo}><Text style={styles.todoText}>{todo}</Text></View>
           ))}
         </View>
       </View>
