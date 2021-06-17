@@ -18,8 +18,6 @@ React Native allows you to code for both Android and IOS together while still ma
 * Import other files
 * Styling
 
-![1200px-React-icon svg](https://user-images.githubusercontent.com/68827992/122327664-1a5afa00-cee3-11eb-9af7-47eac15bf091.png)
-
 # BioMatrix
 If you want to view an example of IOS development, check out BioMatrix! BioMatrix is an app that allows users to quiz themselves on various biology questions!
 
