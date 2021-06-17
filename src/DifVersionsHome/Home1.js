@@ -17,7 +17,7 @@ var width = Dimensions.get('window').width;
 var height = Dimensions.get('window').height;
 
 //Home class
-class Home extends React.Component {
+class Home1 extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -79,4 +79,4 @@ const styles = StyleSheet.create({
 });
 
 //Export
-export default Home;
+export default Home1;

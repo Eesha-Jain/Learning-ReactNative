@@ -5,9 +5,9 @@ import {Reddit} from 'src/Reddit';
 
 const App: () => Node = () => {
   return (
-    //<Home /> //This is the ToDo App
+    <Home /> //This is the ToDo App
     //<Fancy /> //Learning styling
-    <Reddit /> //HTTP Requests
+    //<Reddit /> //HTTP Requests
   );
 };
 
