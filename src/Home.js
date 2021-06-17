@@ -7,6 +7,7 @@
 If you want to compare react-native to react, look in ReactToDoReference.txt for the react code for the same todo app
 */
 
+
 //Import statements
 import React from 'react';
 import { View, TextInput, Text, StyleSheet, Dimensions, TouchableHighlight } from "react-native";
