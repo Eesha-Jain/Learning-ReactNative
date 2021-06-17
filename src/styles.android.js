@@ -1,5 +1,16 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
+/*
+If you want in single file...
+
+1. Import "Platform"
+2. if (Platform.OS === 'ios') {
+  #respective styles go here
+}
+3. You can also do Platform.VERSION
+
+*/
+
 //Phone dimensions
 const { width, height } = Dimensions.get('window');
 
