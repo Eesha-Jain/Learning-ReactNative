@@ -1,15 +1,10 @@
-/*COMMENTS: This is almost EXACTLY like react. The main difference is the tags (View vs div) and also the function calls (onChange vs onChangeText)
-If you want to compare react-native to react, look in ReactToDoReference.txt for the react code for the same todo app
-*/
-
-
 //Import statements
-import React from 'react';
-import { View, TextInput, Text, StyleSheet, Dimensions, TouchableHighlight, Switch } from "react-native";
+import React, { Component } from 'react';
+import { View, TextInput, Text, StyleSheet, TouchableHighlight } from 'react-native';
 
 //Home class
 class Home extends React.Component {
-  constructor(props){
+  /*constructor(props){
     super(props);
     this.state = {
       todos: [],
@@ -22,19 +17,32 @@ class Home extends React.Component {
   }
 
   handlePress(e) {
-    const changedList = [...this.state.todos, this.state.newTodo];
-    this.setState({todos: changedList, newTodo: ""})
-  }
+    fetch({
+      url: 'localhost:3000/todos',
+      method: 'post',
+      body: JSON.stringfy({
+        name: this.state.newTodo,
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => res.json())
+    .then(data => {
+      const todos = [...this.state.todos, data];
+      //this.setState({todos: changedList, newTodo: ""})
+    })
+  }*/
 
   render() {
     return (
-      <View style={styles.container}>
+      <View><Text>Hi</Text></View>
+
+      /*<View style={styles.container}>
         <View style={styles.form}>
           <TextInput style={styles.input} value={this.state.newTodo} onChangeText={this.handleChange.bind(this)} />
 
-          <TouchableHighlight
-            style={styles.button}
-            onPress={this.handlePress.bind(this)}>
+          <TouchableHighlight style={styles.button} onPress={this.handlePress.bind(this)}>
             <Text style={styles.buttonText}>Add</Text>
           </TouchableHighlight>
         </View>
@@ -44,12 +52,12 @@ class Home extends React.Component {
             <View key={i} style={styles.todo}><Text style={styles.todoText}>{todo}</Text></View>
           ))}
         </View>
-      </View>
+      </View>*/
     );
   }
 }
 
-const styles = StyleSheet.create({
+/*const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 70,
@@ -88,7 +96,7 @@ const styles = StyleSheet.create({
   todoText: {
     fontSize: 24,
   }
-});
+});*/
 
 //Export
 export default Home;
