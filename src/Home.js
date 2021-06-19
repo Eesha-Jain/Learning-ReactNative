@@ -4,7 +4,7 @@ import { View, TextInput, Text, StyleSheet, TouchableHighlight } from 'react-nat
 
 //Home class
 class Home extends React.Component {
-  /*constructor(props){
+  constructor(props){
     super(props);
     this.state = {
       todos: [],
@@ -32,13 +32,11 @@ class Home extends React.Component {
       const todos = [...this.state.todos, data];
       //this.setState({todos: changedList, newTodo: ""})
     })
-  }*/
+  }
 
   render() {
     return (
-      <View><Text>Hi</Text></View>
-
-      /*<View style={styles.container}>
+      <View style={styles.container}>
         <View style={styles.form}>
           <TextInput style={styles.input} value={this.state.newTodo} onChangeText={this.handleChange.bind(this)} />
 
@@ -52,12 +50,12 @@ class Home extends React.Component {
             <View key={i} style={styles.todo}><Text style={styles.todoText}>{todo}</Text></View>
           ))}
         </View>
-      </View>*/
+      </View>
     );
   }
 }
 
-/*const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 70,
@@ -96,7 +94,7 @@ class Home extends React.Component {
   todoText: {
     fontSize: 24,
   }
-});*/
+});
 
 //Export
 export default Home;
